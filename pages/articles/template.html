@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[TÍTULO DEL ARTÍCULO] | Insights · The Human Software</title>
+  <meta name="description" content="[EXCERPT DEL ARTÍCULO — máximo 155 caracteres]">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:title" content="[TÍTULO] — THS Insights">
+  <meta property="og:description" content="[EXCERPT]">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://thehumansoftware.com/pages/articles/[SLUG].html">
+  <meta property="article:author" content="Julián Andrés Mosquera">
+  <meta property="article:published_time" content="[YYYY-MM-DD]">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/variables.css">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/navbar.css">
+  <link rel="stylesheet" href="../../css/footer.css">
+  <link rel="stylesheet" href="../../css/insights.css">
+  <link rel="stylesheet" href="../../css/article.css">
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <main id="main-content">
+
+    <!-- ============================================================
+         ARTICLE HERO
+         ============================================================ -->
+    <header class="article-hero">
+      <div class="article-hero-inner">
+
+        <!-- Breadcrumb -->
+        <nav class="article-breadcrumb" aria-label="Breadcrumb">
+          <a href="../../index.html" data-i18n="article.breadcrumb.home">Inicio</a>
+          <span class="sep" aria-hidden="true">›</span>
+          <a href="../insights.html" data-i18n="article.breadcrumb.insights">Insights</a>
+          <span class="sep" aria-hidden="true">›</span>
+          <span data-i18n="article.breadcrumb.category">[CATEGORÍA]</span>
+        </nav>
+
+        <!-- Category + Type badges -->
+        <div class="article-header-meta">
+          <span class="article-card-category" data-i18n="article.category">[CATEGORÍA]</span>
+          <span class="type-badge type-badge--featured" data-i18n="article.type">Análisis Destacado</span>
+        </div>
+
+        <!-- Title -->
+        <h1 data-i18n="article.title">[TÍTULO DEL ARTÍCULO — Máximo 80 caracteres para legibilidad]</h1>
+
+        <!-- Excerpt -->
+        <p class="article-excerpt" data-i18n="article.excerpt">[Extracto del artículo en 1-2 oraciones. Debe responder: ¿por qué debería leer esto? ¿Qué decisión me ayuda a tomar?]</p>
+
+        <!-- Author + Date + Reading -->
+        <div class="article-info-bar">
+          <div class="article-author">
+            <div class="article-author-avatar" aria-hidden="true">JM</div>
+            <div>
+              <div class="article-author-name" data-i18n="article.author.name">Julián Andrés Mosquera</div>
+              <div class="article-author-role" data-i18n="article.author.role">Fundador, The Human Software</div>
+            </div>
+          </div>
+          <div class="article-date">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span data-i18n="article.date">[Fecha de publicación]</span>
+          </div>
+          <div class="article-reading-time">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span data-i18n="article.reading">[X] min lectura</span>
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- ============================================================
+         ARTICLE LAYOUT (Content + Sidebar)
+         ============================================================ -->
+    <div class="article-layout">
+
+      <!-- ---- Main Content ---- -->
+      <article class="article-content">
+
+        <!-- Table of Contents -->
+        <nav class="article-toc" aria-label="Tabla de contenidos">
+          <div class="article-toc-title" data-i18n="article.toc.title">En este artículo</div>
+          <ol>
+            <li><a href="#seccion-1">[Título de la Sección 1]</a></li>
+            <li><a href="#seccion-2">[Título de la Sección 2]</a></li>
+            <li><a href="#seccion-3">[Título de la Sección 3]</a></li>
+            <li><a href="#framework">[Framework: NOMBRE]</a></li>
+            <li><a href="#implicaciones">[Implicaciones para LATAM]</a></li>
+            <li><a href="#conclusion">[Conclusión]</a></li>
+          </ol>
+        </nav>
+
+        <!-- Confidence badge -->
+        <div class="article-confidence">
+          Confianza: [X]/10 — [Fuente de verificación]
+        </div>
+
+        <!-- Prose -->
+        <div class="article-prose">
+
+          <h2 id="seccion-1">[Título de la Sección 1]</h2>
+
+          <p>[Contenido del artículo. Cada párrafo debe aportar información verificable o análisis original. Evitar relleno. Cada afirmación con fuente verificable o marcada como inferencia.]</p>
+
+          <p>[Segundo párrafo de la sección. La extensión ideal es 3,000–4,000 palabras por artículo. La estructura debe permitir lectura no lineal (el lector puede saltar a cualquier sección vía ToC).]</p>
+
+          <blockquote>
+            [Cita o dato destacado que refuerza el argumento principal de la sección.]
+          </blockquote>
+
+          <h2 id="seccion-2">[Título de la Sección 2]</h2>
+
+          <p>[Contenido de la segunda sección. Incluir datos cuantitativos cuando sea posible: porcentajes, comparativas, benchmarks sectoriales.]</p>
+
+          <h2 id="seccion-3">[Título de la Sección 3]</h2>
+
+          <p>[Contenido de la tercera sección.]</p>
+
+          <!-- ---- Inline Newsletter CTA (at ~1/3 of article) ---- -->
+          <div class="article-inline-cta">
+            <h4 data-i18n="article.inline.title">¿Este análisis te resulta útil?</h4>
+            <p data-i18n="article.inline.desc">Cada quince días publicamos inteligencia estratégica con este nivel de profundidad en el Strategic Intelligence Digest.</p>
+            <a href="../subscribe.html" data-i18n="article.inline.cta">Suscribirse al Digest →</a>
+          </div>
+
+          <h2 id="framework">[Framework: NOMBRE DEL FRAMEWORK]</h2>
+
+          <!-- Framework callout -->
+          <div class="article-framework">
+            <div class="article-framework-label">Framework Propietario</div>
+            <h4>[Nombre del Framework] ([Sigla])</h4>
+            <p>[Descripción breve del framework: qué mide, cómo se aplica, qué produce. Debe ser autosuficiente — el lector entiende el framework sin necesidad de leer el resto del artículo.]</p>
+          </div>
+
+          <p>[Explicación detallada del framework: dimensiones, metodología, casos de uso, limitaciones declaradas.]</p>
+
+          <h2 id="implicaciones">[Implicaciones para América Latina]</h2>
+
+          <p>[Sección obligatoria en cada artículo THS. Responde: ¿qué significa esto para un líder en Colombia, México o Perú en los próximos 12–36 meses? Esta es la sección que ningún competidor anglosajón produce.]</p>
+
+          <h2 id="conclusion">[Conclusión]</h2>
+
+          <p>[Síntesis accionable. ¿Qué hace diferente el lector el lunes con esta información? 2-3 párrafos máximo.]</p>
+
+        </div>
+
+        <!-- Tags -->
+        <footer class="article-footer">
+          <div class="article-tags">
+            <a href="#" class="article-tag">[Tag 1]</a>
+            <a href="#" class="article-tag">[Tag 2]</a>
+            <a href="#" class="article-tag">[Tag 3]</a>
+          </div>
+
+          <!-- Author signature -->
+          <div class="article-signature">
+            <div class="article-signature-avatar" aria-hidden="true">JM</div>
+            <div>
+              <div class="article-signature-name">Julián Andrés Mosquera</div>
+              <div class="article-signature-bio" data-i18n="article.sig.bio">Fundador de The Human Software. Produce inteligencia estratégica aplicada desde Cali, Colombia, para decisores de América Latina.</div>
+            </div>
+          </div>
+        </footer>
+
+      </article>
+
+      <!-- ---- Sidebar ---- -->
+      <aside class="article-sidebar">
+
+        <!-- Subscribe card -->
+        <div class="sidebar-subscribe">
+          <h4 data-i18n="article.sidebar.sub.title">Strategic Intelligence Digest</h4>
+          <p data-i18n="article.sidebar.sub.desc">Análisis quincenal con fuentes verificadas, frameworks propietarios y contexto LATAM.</p>
+          <a href="../subscribe.html" data-i18n="article.sidebar.sub.cta">Suscribirse →</a>
+        </div>
+
+        <!-- Related articles -->
+        <div class="sidebar-related">
+          <h4 data-i18n="article.sidebar.related.title">Relacionados</h4>
+          <a href="#">[Título del artículo relacionado 1]</a>
+          <a href="#">[Título del artículo relacionado 2]</a>
+          <a href="#">[Título del artículo relacionado 3]</a>
+        </div>
+
+      </aside>
+
+    </div>
+
+    <!-- ============================================================
+         RELATED ARTICLES (bottom grid)
+         ============================================================ -->
+    <section class="related-section">
+      <h2 data-i18n="article.related.title">También Te Puede Interesar</h2>
+      <div class="related-grid">
+
+        <a href="#" class="article-card">
+          <div class="article-card-img">
+            <div class="article-card-img-placeholder" style="background: var(--insight-bg-1);" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/></svg>
+            </div>
+          </div>
+          <div class="article-card-body">
+            <span class="article-card-category">[Categoría]</span>
+            <h3>[Título del artículo relacionado]</h3>
+            <p class="article-card-excerpt">[Extracto breve]</p>
+            <div class="article-card-footer">
+              <span class="article-card-meta"><span>[Fecha]</span><span>·</span><span>[X] min</span></span>
+              <span class="article-card-read">Leer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="article-card">
+          <div class="article-card-img">
+            <div class="article-card-img-placeholder" style="background: var(--insight-bg-2);" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/></svg>
+            </div>
+          </div>
+          <div class="article-card-body">
+            <span class="article-card-category">[Categoría]</span>
+            <h3>[Título del artículo relacionado]</h3>
+            <p class="article-card-excerpt">[Extracto breve]</p>
+            <div class="article-card-footer">
+              <span class="article-card-meta"><span>[Fecha]</span><span>·</span><span>[X] min</span></span>
+              <span class="article-card-read">Leer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="article-card">
+          <div class="article-card-img">
+            <div class="article-card-img-placeholder" style="background: var(--insight-bg-3);" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/></svg>
+            </div>
+          </div>
+          <div class="article-card-body">
+            <span class="article-card-category">[Categoría]</span>
+            <h3>[Título del artículo relacionado]</h3>
+            <p class="article-card-excerpt">[Extracto breve]</p>
+            <div class="article-card-footer">
+              <span class="article-card-meta"><span>[Fecha]</span><span>·</span><span>[X] min</span></span>
+              <span class="article-card-read">Leer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="../../js/partials.js" defer></script>
+  <script src="../../js/main.js" defer></script>
+</body>
+</html>

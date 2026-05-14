@@ -1,0 +1,369 @@
+/* ============================================================
+   HERO-SLIDER.CSS — AMD-Style Full-Screen Hero Slider
+   Full-viewport slides with image bg + gradient overlay +
+   left-aligned text + staggered animations + bullet navigation.
+   ============================================================ */
+
+/* ---- Container ---- */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: var(--hero-height);
+  min-height: var(--hero-min-height);
+  overflow: hidden;
+  background: #000000;
+}
+
+/* ---- Individual Slide ---- */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity var(--transition-hero);
+  z-index: 0;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* ---- Slide Background Image ---- */
+.hero-slide-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Ken Burns: subtle zoom over slide duration */
+  animation: kenBurns 12s ease-in-out infinite alternate;
+}
+
+.hero-slide.active .hero-slide-bg {
+  animation-play-state: running;
+}
+
+.hero-slide:not(.active) .hero-slide-bg {
+  animation-play-state: paused;
+}
+
+@keyframes kenBurns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.06); }
+}
+
+/* ---- Gradient Overlay (AMD: dark left → transparent right) ---- */
+.hero-slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--hero-overlay);
+  z-index: 1;
+}
+
+/* ---- Content Container ---- */
+.hero-slide-content {
+  position: relative;
+  z-index: 2;
+  max-width: var(--mw);
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4vw, 64px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* AMD: text aligned left, max-width ~50% of viewport */
+  max-width: min(var(--mw), 100%);
+}
+
+.hero-slide-text {
+  max-width: 620px;
+}
+
+/* ---- Eyebrow ---- */
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+  /* Animation */
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 500ms ease, transform 500ms ease;
+  transition-delay: 200ms;
+}
+
+.hero-slide.active .hero-eyebrow {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* ---- Headline ---- */
+.hero-headline {
+  font-family: var(--f);
+  font-size: var(--text-hero);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin: 0 0 24px 0;
+  /* Animation */
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 600ms ease, transform 600ms ease;
+  transition-delay: 400ms;
+}
+
+.hero-slide.active .hero-headline {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gradient text accent (optional per slide) */
+.hero-headline .accent-line {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---- Subtitle ---- */
+.hero-subtitle {
+  font-family: var(--f);
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  font-weight: 400;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.70);
+  max-width: 540px;
+  margin: 0 0 36px 0;
+  /* Animation */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms ease, transform 600ms ease;
+  transition-delay: 600ms;
+}
+
+.hero-slide.active .hero-subtitle {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- CTAs ---- */
+.hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  /* Animation */
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 500ms ease, transform 500ms ease;
+  transition-delay: 800ms;
+}
+
+.hero-slide.active .hero-ctas {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 36px;
+  font-family: var(--f);
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+  letter-spacing: 0.01em;
+}
+
+.hero-cta-primary:hover {
+  background: var(--accent-hover);
+  box-shadow: var(--shadow-accent);
+  transform: translateY(-1px);
+}
+
+.hero-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 24px;
+  font-family: var(--f);
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.hero-cta-secondary:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* ---- Badge (floating, AMD "NEW" style) ---- */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: var(--badge-bg);
+  border: 1px solid var(--badge-border);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--badge-text);
+  margin-bottom: 20px;
+  /* Animation */
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 400ms ease, transform 400ms ease;
+  transition-delay: 100ms;
+}
+
+.hero-slide.active .hero-badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Bullet Navigation ---- */
+.hero-bullets {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 10px;
+}
+
+.hero-bullet {
+  width: 12px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 0;
+  transition: width var(--transition-base), background var(--transition-base);
+}
+
+.hero-bullet:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.hero-bullet.active {
+  width: 32px;
+  background: var(--accent);
+}
+
+/* ---- Progress Bar (per slide) ---- */
+.hero-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: var(--accent);
+  z-index: 10;
+  width: 0%;
+  transition: width 100ms linear;
+}
+
+.hero-slider.paused .hero-progress {
+  transition: none;
+}
+
+/* ---- Reduced Motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide-bg {
+    animation: none !important;
+  }
+  .hero-eyebrow,
+  .hero-headline,
+  .hero-subtitle,
+  .hero-ctas,
+  .hero-badge {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .hero-slide {
+    transition-duration: 100ms !important;
+  }
+}
+
+/* ---- Mobile Adjustments ---- */
+@media (max-width: 768px) {
+  .hero-slider {
+    min-height: 500px;
+  }
+
+  .hero-slide-content {
+    padding: 0 24px;
+    padding-top: var(--nav-height-mobile);
+  }
+
+  .hero-slide-text {
+    max-width: 100%;
+  }
+
+  .hero-headline {
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+    margin-bottom: 16px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 28px;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-cta-primary,
+  .hero-cta-secondary {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-bullets {
+    bottom: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-cta-primary {
+    padding: 14px 24px;
+    font-size: 14px;
+  }
+}

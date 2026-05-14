@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | The Human Software</title>
+  <meta name="description" content="Conversemos sobre lo que necesitas decidir. No hacemos pitch de ventas. Hacemos diagnóstico.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+  <main id="main-content">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero fu">
+      <div class="hero-bg"></div>
+      <div class="hero-glow"></div>
+      <div class="page-hero-inner">
+        <h1 data-i18n="contact.hero.title">Conversemos Sobre lo que Necesitas Decidir</h1>
+        <p class="subtitle" data-i18n="contact.hero.subtitle">No hacemos pitch de ventas. Hacemos diagnóstico. Cuéntanos qué decisión estratégica tienes sobre la mesa y evaluamos si podemos aportar.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT LAYOUT -->
+    <div class="contact-layout fu">
+
+      <!-- FORM -->
+      <div class="contact-form" id="contact-form-wrap">
+        <form id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name" data-i18n="contact.form.name.label">Tu nombre completo</label>
+            <input type="text" id="name" name="name" placeholder="Ej: María García López" data-i18n-placeholder="contact.form.name.placeholder" required>
+          </div>
+          <div class="form-group">
+            <label for="email" data-i18n="contact.form.email.label">Email profesional</label>
+            <input type="email" id="email" name="email" placeholder="Ej: m.garcia@empresa.co" data-i18n-placeholder="contact.form.email.placeholder" required>
+          </div>
+          <div class="form-group">
+            <label for="organization" data-i18n="contact.form.org.label">Tu organización</label>
+            <input type="text" id="organization" name="organization" placeholder="Ej: Grupo Empresarial ABC" data-i18n-placeholder="contact.form.org.placeholder" required>
+          </div>
+          <div class="form-group">
+            <label for="type" data-i18n="contact.form.type.label">¿En qué podemos aportar?</label>
+            <select id="type" name="type" required>
+              <option value="" disabled selected data-i18n="contact.form.type.placeholder">Selecciona una opción</option>
+              <option value="ia-compass" data-i18n="contact.form.type.opt1">Diagnóstico de madurez en IA (IA-COMPASS)</option>
+              <option value="advisory" data-i18n="contact.form.type.opt2">Consultoría estratégica en IA y transformación digital</option>
+              <option value="academy" data-i18n="contact.form.type.opt3">Formación ejecutiva o corporativa (THS Academy)</option>
+              <option value="sid" data-i18n="contact.form.type.opt4">Suscripción al Strategic Intelligence Digest</option>
+              <option value="alliance" data-i18n="contact.form.type.opt5">Alianza institucional o académica</option>
+              <option value="collaboration" data-i18n="contact.form.type.opt6">Propuesta de colaboración o investigación</option>
+              <option value="frameworks" data-i18n="contact.form.type.opt7">Consulta sobre frameworks o metodología THS</option>
+              <option value="other" data-i18n="contact.form.type.opt8">Otro (describir en el mensaje)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message" data-i18n="contact.form.message.label">Contexto de tu consulta</label>
+            <textarea id="message" name="message" placeholder="Describe brevemente la decisión o desafío que enfrentas. No necesitamos detalles confidenciales en esta etapa." data-i18n-placeholder="contact.form.message.placeholder" required minlength="20"></textarea>
+          </div>
+          <button type="submit" class="btn btn-accent" data-i18n="contact.form.submit">Enviar Mensaje</button>
+        </form>
+      </div>
+
+      <!-- CONTACT INFO -->
+      <div class="contact-info">
+        <h3 data-i18n="contact.info.title">Contacto Directo</h3>
+
+        <div class="contact-info-item">
+          <div class="info-label" data-i18n="contact.info.email.label">Email</div>
+          <p><a href="mailto:contacto@thehumansoftware.com">contacto@thehumansoftware.com</a></p>
+          <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;" data-i18n="contact.info.email.note">Para consultas directas que no requieren formulario.</p>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="info-label" data-i18n="contact.info.response.label">Tiempo de respuesta</div>
+          <p data-i18n="contact.info.response.text">Respondemos en máximo 48 horas hábiles.</p>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="info-label" data-i18n="contact.info.coverage.label">Cobertura geográfica</div>
+          <p data-i18n="contact.info.coverage.text">Operamos desde Colombia para toda América Latina. Consultoría remota disponible globalmente en español e inglés.</p>
+        </div>
+
+        <div class="contact-notice" data-i18n="contact.info.notice">Esta no es una página de ventas. Es un punto de contacto profesional. Escríbenos cuando tengas una decisión real que necesite criterio.</div>
+      </div>
+
+    </div>
+
+    <!-- POST-SUBMIT CONFIRMATION (hidden by default) -->
+    <div class="form-confirmation" id="form-confirmation">
+      <h3 data-i18n="contact.confirmation.title">Tu mensaje llegó. Lo leemos personalmente.</h3>
+      <p data-i18n="contact.confirmation.text">No usamos respuestas automáticas genéricas. Julián o su equipo revisarán tu consulta y responderán en un plazo razonable. Máximo 48 horas hábiles.</p>
+    </div>
+
+  </main>
+  <div id="footer-placeholder"></div>
+  <script src="../js/partials.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</html>

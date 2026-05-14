@@ -1,0 +1,138 @@
+{
+  "articles": [
+    {
+      "slug": "pilotos-ia-colombia",
+      "title": "Por qué el 73% de los pilotos de IA en Colombia no llegan a producción",
+      "title_en": "Why 73% of AI pilots in Colombia never reach production",
+      "excerpt": "La brecha no es tecnológica: es de gobernanza. Análisis de 40 proyectos de IA en empresas colombianas con datos de 2024–2025.",
+      "category": "ia-aplicada",
+      "type": "featured",
+      "date": "2026-04-15",
+      "reading_min": 12,
+      "framework": null,
+      "tags": ["gobernanza", "colombia", "pilotos-ia"],
+      "status": "planned"
+    },
+    {
+      "slug": "chatgpt-enterprise-sin-estrategia",
+      "title": "El error de comprar ChatGPT Enterprise sin estrategia de datos",
+      "title_en": "The mistake of buying ChatGPT Enterprise without a data strategy",
+      "excerpt": "Licencias sin arquitectura de datos producen gasto, no transformación. Framework de evaluación pre-compra para directores de TI.",
+      "category": "decisiones",
+      "type": "featured",
+      "date": "2026-04-22",
+      "reading_min": 10,
+      "framework": null,
+      "tags": ["chatgpt", "enterprise", "datos"],
+      "status": "planned"
+    },
+    {
+      "slug": "regulacion-ia-colombia-2026",
+      "title": "Regulación de IA en Colombia 2026: qué existe, qué falta y qué cambia para tu empresa",
+      "title_en": "AI regulation in Colombia 2026: what exists, what's missing, and what changes for your company",
+      "excerpt": "Mapa completo del marco regulatorio colombiano aplicable a IA, con comparativa México-Chile-Brasil y checklist de compliance.",
+      "category": "latam",
+      "type": "featured",
+      "date": "2026-05-01",
+      "reading_min": 15,
+      "framework": null,
+      "tags": ["regulacion", "colombia", "compliance"],
+      "status": "planned"
+    },
+    {
+      "slug": "cumplimiento-teatral",
+      "title": "El Cumplimiento Teatral: cuando la IA dice que auditó su propio código (y mintió)",
+      "title_en": "Theatrical Compliance: when AI says it audited its own code (and lied)",
+      "excerpt": "Análisis técnico de por qué los modelos de lenguaje no pueden autoverificarse y qué hacer al respecto.",
+      "category": "gobernanza",
+      "type": "brief",
+      "date": "2026-05-15",
+      "reading_min": 14,
+      "framework": "C-T-V",
+      "tags": ["cumplimiento", "auditoria", "llm"],
+      "status": "planned"
+    },
+    {
+      "slug": "rag-educativo-sin-alucinaciones",
+      "title": "RAG educativo sin alucinaciones: cómo construir un tutor virtual anclado a tu PEI institucional",
+      "title_en": "Educational RAG without hallucinations: how to build a virtual tutor anchored to your institutional curriculum",
+      "excerpt": "Guía práctica de Retrieval-Augmented Generation para instituciones educativas.",
+      "category": "ia-aplicada",
+      "type": "series",
+      "date": "2026-06-01",
+      "reading_min": 18,
+      "framework": null,
+      "tags": ["rag", "educacion", "edtech"],
+      "status": "planned"
+    },
+    {
+      "slug": "arquitectos-cognitivos",
+      "title": "No necesitamos más Prompt Engineers. Necesitamos Arquitectos Cognitivos.",
+      "title_en": "We don't need more Prompt Engineers. We need Cognitive Architects.",
+      "excerpt": "Por qué escribir prompts dejará de ser habilidad diferencial y qué rol la reemplazará en 2027.",
+      "category": "ths-perspectiva",
+      "type": "brief",
+      "date": "2026-06-15",
+      "reading_min": 8,
+      "framework": null,
+      "tags": ["prompting", "roles", "futuro"],
+      "status": "planned"
+    }
+  ],
+  "editions": [
+    {
+      "number": "001",
+      "title": "El nuevo mapa del aprendizaje profesional en la era post-ChatGPT",
+      "title_en": "The new map of professional learning in the post-ChatGPT era",
+      "framework": "MAC",
+      "date": "2026-03-15",
+      "words": 3500,
+      "status": "published"
+    },
+    {
+      "number": "002",
+      "title": "Usar IA vs. diseñar con IA: la diferencia que separa operadores de arquitectos",
+      "title_en": "Using AI vs. designing with AI: the difference between operators and architects",
+      "framework": "EIA",
+      "date": "2026-04-01",
+      "words": 3500,
+      "status": "production"
+    },
+    {
+      "number": "003",
+      "title": "Web3 sin hype: los tres casos de uso que ya generan valor real en LATAM",
+      "title_en": "Web3 without hype: three use cases already generating real value in LATAM",
+      "framework": "FVR",
+      "date": "2026-04-15",
+      "words": 3500,
+      "status": "planned"
+    },
+    {
+      "number": "004",
+      "title": "Agentes de IA: la capa que viene después de ChatGPT",
+      "title_en": "AI Agents: the layer that comes after ChatGPT",
+      "framework": "MDA",
+      "date": "2026-05-01",
+      "words": 3500,
+      "status": "planned"
+    },
+    {
+      "number": "005",
+      "title": "El colapso del modelo universitario tradicional en LATAM",
+      "title_en": "The collapse of the traditional university model in LATAM",
+      "framework": "IRE",
+      "date": "2026-05-15",
+      "words": 3500,
+      "status": "planned"
+    }
+  ],
+  "categories": [
+    { "id": "all", "label": "Todos", "label_en": "All" },
+    { "id": "ia-aplicada", "label": "IA Aplicada", "label_en": "Applied AI" },
+    { "id": "decisiones", "label": "Decisiones Estratégicas", "label_en": "Strategic Decisions" },
+    { "id": "latam", "label": "Contexto LATAM", "label_en": "LATAM Context" },
+    { "id": "gobernanza", "label": "Gobernanza y Ética", "label_en": "Governance & Ethics" },
+    { "id": "ths-perspectiva", "label": "Perspectiva THS", "label_en": "THS Perspective" },
+    { "id": "thsn", "label": "Ediciones THSN", "label_en": "THSN Editions" }
+  ]
+}

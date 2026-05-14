@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Human Software | Inteligencia Estratégica Aplicada</title>
+  <meta name="description" content="Análisis propietario con fuentes verificadas, frameworks de decisión aplicables y contexto LATAM. Para decisores que exigen rigor.">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Human Software — Inteligencia Estratégica Aplicada">
+  <meta property="og:description" content="Análisis propietario, frameworks verificables, contexto LATAM. Para decisores que exigen rigor.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thehumansoftware.com">
+  <meta property="og:locale" content="es_CO">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/hero-slider.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+  <style>
+    /* ============================================================
+       INDEX-SPECIFIC STYLES — AMD-Adapted Sections
+       ============================================================ */
+
+    /* ---- Section Layout (AMD pattern: generous spacing) ---- */
+    .home-section {
+      padding: var(--space-24) 0;
+    }
+    .home-section .section-inner {
+      max-width: var(--mw);
+      margin: 0 auto;
+      padding: 0 clamp(24px, 4vw, 64px);
+    }
+    .section-alt {
+      background: var(--bg-section-b);
+    }
+
+    /* ---- Section Headers (AMD: left-aligned, bold) ---- */
+    .section-eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .section-headline {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--text-primary);
+      margin: 0 0 16px 0;
+    }
+    .section-desc {
+      font-size: var(--text-lg);
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 640px;
+      margin-bottom: var(--space-10);
+    }
+
+    /* ---- Ecosystem Cards (AMD product-family grid) ---- */
+    .eco-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .eco-card {
+      position: relative;
+      overflow: hidden;
+      background: var(--bg-card);
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 32px;
+      transition: transform var(--transition-base);
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+    .eco-card:hover {
+      transform: scale(var(--card-hover-scale));
+      z-index: 2;
+    }
+    .eco-card-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 6s ease;
+    }
+    .eco-card:hover .eco-card-bg {
+      transform: scale(1.05);
+    }
+    .eco-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.1) 100%);
+    }
+    .eco-card-content {
+      position: relative;
+      z-index: 1;
+    }
+    .eco-card-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(108,71,255,0.12);
+      border-radius: var(--radius-sm);
+      margin-bottom: 14px;
+    }
+    .eco-card h3 {
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      margin: 0 0 10px 0;
+      line-height: 1.2;
+    }
+    .eco-card p {
+      font-size: var(--text-sm);
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+      margin: 0 0 20px 0;
+    }
+    .eco-card-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap var(--transition-fast);
+    }
+    .eco-card:hover .eco-card-link {
+      gap: 12px;
+    }
+    .eco-card-link svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* ---- Feature Section (AMD full-width product highlight) ---- */
+    .feature-section {
+      background: var(--bg-section-c);
+      padding: var(--space-24) 0;
+    }
+    .feature-inner {
+      max-width: var(--mw);
+      margin: 0 auto;
+      padding: 0 clamp(24px, 4vw, 64px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      align-items: center;
+    }
+    .feature-visual {
+      position: relative;
+      aspect-ratio: 4/3;
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .feature-radar {
+      width: 80%;
+      max-width: 320px;
+    }
+    .feature-text .section-headline {
+      margin-bottom: 20px;
+    }
+    .feature-text p {
+      font-size: var(--text-base);
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .feature-dimensions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 24px 0 32px;
+    }
+    .feature-dim {
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--sky);
+      background: var(--sky-subtle);
+      border: 1px solid rgba(93,227,255,0.15);
+      border-radius: var(--radius-full);
+    }
+
+    /* ---- Insights Cards (AMD news section) ---- */
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .insight-card {
+      background: var(--bg-card);
+      overflow: hidden;
+      transition: transform var(--transition-base);
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+    }
+    .insight-card:hover {
+      transform: scale(var(--card-hover-scale));
+      z-index: 2;
+    }
+    .insight-card-img {
+      height: 200px;
+      background: var(--insight-bg-1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      color: rgba(108,71,255,0.3);
+    }
+    .insight-card:nth-child(2) .insight-card-img {
+      background: var(--insight-bg-2);
+    }
+    .insight-card:nth-child(3) .insight-card-img {
+      background: var(--insight-bg-3);
+    }
+    .insight-card-body {
+      padding: 28px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .insight-cat {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .insight-card h3 {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+      line-height: 1.35;
+      margin: 0 0 12px 0;
+    }
+    .insight-card p {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .insight-meta {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      gap: 8px;
+    }
+
+    /* ---- Logo Carousel (trust section) ---- */
+    .trust-section {
+      padding: var(--space-16) 0;
+      background: var(--bg-section-b);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .trust-label {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: var(--space-6);
+    }
+    .trust-track {
+      display: flex;
+      gap: 64px;
+      animation: marquee 30s linear infinite;
+      width: max-content;
+    }
+    .trust-overflow {
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+    .trust-logo {
+      height: 28px;
+      opacity: 0.35;
+      filter: grayscale(1) brightness(2);
+      transition: opacity var(--transition-fast);
+      flex-shrink: 0;
+    }
+    .trust-logo:hover {
+      opacity: 0.7;
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ---- CTA Section (AMD: full-width, dramatic) ---- */
+    .cta-section {
+      position: relative;
+      padding: var(--space-32) 0;
+      background: var(--bg-section-c);
+      overflow: hidden;
+    }
+    .cta-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(108,71,255,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 24px;
+    }
+    .cta-inner h2 {
+      font-size: clamp(1.6rem, 3vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+    .cta-inner p {
+      font-size: var(--text-lg);
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 900px) {
+      .eco-grid { grid-template-columns: 1fr; gap: 1px; }
+      .eco-card { min-height: 320px; }
+      .feature-inner { grid-template-columns: 1fr; gap: var(--space-8); }
+      .feature-visual { order: -1; max-height: 300px; }
+      .insights-grid { grid-template-columns: 1fr; gap: 1px; }
+    }
+
+    @media (max-width: 480px) {
+      .home-section { padding: var(--space-16) 0; }
+      .eco-card { min-height: 280px; padding: 24px; }
+    }
+
+    /* ---- Fade-up on scroll ---- */
+    .fu {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+    .fu.iv {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <main id="main-content">
+
+    <!-- ============================================================
+         HERO SLIDER — AMD-Style Full-Screen (4 Slides)
+         ============================================================ -->
+    <section class="hero-slider" aria-label="Hero slider">
+
+      <!-- SLIDE 1 — Posicionamiento THS -->
+      <div class="hero-slide active" data-slide="0">
+        <div class="hero-slide-bg" style="background-image: url('img/slides/slide-01-strategy.jpg'); background-color: #0a0a12;"></div>
+        <div class="hero-slide-overlay"></div>
+        <div class="hero-slide-content">
+          <div class="hero-slide-text">
+            <div class="hero-eyebrow">
+              <span class="hero-eyebrow-dot" aria-hidden="true"></span>
+              <span data-i18n="hero.s1.eyebrow">Inteligencia Estratégica Aplicada</span>
+            </div>
+            <h1 class="hero-headline" data-i18n="hero.s1.headline">Pensamos Antes<br>de Automatizar.</h1>
+            <p class="hero-subtitle" data-i18n="hero.s1.subtitle">Análisis propietario con fuentes verificadas, frameworks de decisión aplicables y contexto LATAM. Para decisores que exigen rigor, no tendencias.</p>
+            <div class="hero-ctas">
+              <a href="pages/manifesto.html" class="hero-cta-primary" data-i18n="hero.s1.cta1">Conocer el Método →</a>
+              <a href="pages/thsn.html" class="hero-cta-secondary" data-i18n="hero.s1.cta2">Explorar THSN</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 2 — Strategic Intelligence Digest -->
+      <div class="hero-slide" data-slide="1">
+        <div class="hero-slide-bg" style="background-image: url('img/slides/slide-02-digest.jpg'); background-color: #08060e;"></div>
+        <div class="hero-slide-overlay"></div>
+        <div class="hero-slide-content">
+          <div class="hero-slide-text">
+            <span class="hero-badge" data-i18n="hero.s2.badge">Edición #001 disponible</span>
+            <div class="hero-eyebrow" data-i18n="hero.s2.eyebrow">Publicación Insignia</div>
+            <h1 class="hero-headline" data-i18n="hero.s2.headline">Cada Quince Días,<br><span class="accent-line">Una Decisión Mejor.</span></h1>
+            <p class="hero-subtitle" data-i18n="hero.s2.subtitle">3,000+ palabras, 15–25 fuentes verificadas, 1–2 frameworks propietarios por edición. Contexto LATAM obligatorio.</p>
+            <div class="hero-ctas">
+              <a href="pages/sid.html" class="hero-cta-primary" data-i18n="hero.s2.cta1">Explorar el Digest →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 3 — Enterprise Advisory -->
+      <div class="hero-slide" data-slide="2">
+        <div class="hero-slide-bg" style="background-image: url('img/slides/slide-03-advisory.jpg'); background-color: #060810;"></div>
+        <div class="hero-slide-overlay"></div>
+        <div class="hero-slide-content">
+          <div class="hero-slide-text">
+            <div class="hero-eyebrow" data-i18n="hero.s3.eyebrow">Consultoría Estratégica</div>
+            <h1 class="hero-headline" data-i18n="hero.s3.headline">No Instalamos<br>Herramientas.<br><span class="accent-line">Instalamos Criterio.</span></h1>
+            <p class="hero-subtitle" data-i18n="hero.s3.subtitle">Diagnóstico IA-COMPASS, gobernanza de IA e implementación verificable. Desde Colombia, para América Latina.</p>
+            <div class="hero-ctas">
+              <a href="pages/contact.html" class="hero-cta-primary" data-i18n="hero.s3.cta1">Iniciar Conversación →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 4 — THS Academy -->
+      <div class="hero-slide" data-slide="3">
+        <div class="hero-slide-bg" style="background-image: url('img/slides/slide-04-academy.jpg'); background-color: #0a0808;"></div>
+        <div class="hero-slide-overlay"></div>
+        <div class="hero-slide-content">
+          <div class="hero-slide-text">
+            <div class="hero-eyebrow" data-i18n="hero.s4.eyebrow">Formación Ejecutiva</div>
+            <h1 class="hero-headline" data-i18n="hero.s4.headline">Resultados Medibles,<br><span class="accent-line">No Certificados Decorativos.</span></h1>
+            <p class="hero-subtitle" data-i18n="hero.s4.subtitle">Cohortes reducidas, proyectos reales, mentoría directa. Pensamiento estratégico con IA para líderes y equipos.</p>
+            <div class="hero-ctas">
+              <a href="pages/academy.html" class="hero-cta-primary" data-i18n="hero.s4.cta1">Ver Programas →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bullets -->
+      <div class="hero-bullets" role="tablist" aria-label="Slide navigation">
+        <button class="hero-bullet active" data-slide="0" aria-label="Slide 1"></button>
+        <button class="hero-bullet" data-slide="1" aria-label="Slide 2"></button>
+        <button class="hero-bullet" data-slide="2" aria-label="Slide 3"></button>
+        <button class="hero-bullet" data-slide="3" aria-label="Slide 4"></button>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="hero-progress" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============================================================
+         ECOSYSTEM — AMD Product-Family Grid
+         ============================================================ -->
+    <section class="home-section" style="padding-bottom: 0;">
+      <div class="section-inner fu">
+        <div class="section-eyebrow" data-i18n="eco.eyebrow">Ecosistema</div>
+        <h2 class="section-headline" data-i18n="eco.headline">Tres Líneas de Inteligencia.<br>Un Solo Estándar de Rigor.</h2>
+        <p class="section-desc" data-i18n="eco.desc">Cada línea de negocio de THS responde una necesidad distinta del decisor latinoamericano. Todas comparten el mismo compromiso: análisis verificable, frameworks aplicables, impacto medible.</p>
+      </div>
+      <div class="eco-grid fu">
+        <!-- Card 1: SID -->
+        <a href="pages/sid.html" class="eco-card">
+          <div class="eco-card-bg" style="background: var(--insight-bg-1);"></div>
+          <div class="eco-card-overlay"></div>
+          <div class="eco-card-content">
+            <span class="eco-card-tag" data-i18n="eco.c1.tag">Línea 1</span>
+            <h3 data-i18n="eco.c1.title">Strategic Intelligence Digest</h3>
+            <p data-i18n="eco.c1.desc">Publicación quincenal de 3,000+ palabras con estándares IEEE. Fuentes primarias, frameworks propietarios, contexto LATAM. Cap: 5,000 miembros.</p>
+            <span class="eco-card-link" data-i18n="eco.c1.cta">Explorar el Digest <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </a>
+        <!-- Card 2: Academy -->
+        <a href="pages/academy.html" class="eco-card">
+          <div class="eco-card-bg" style="background: var(--insight-bg-2);"></div>
+          <div class="eco-card-overlay"></div>
+          <div class="eco-card-content">
+            <span class="eco-card-tag" data-i18n="eco.c2.tag">Línea 2</span>
+            <h3 data-i18n="eco.c2.title">THS Academy</h3>
+            <p data-i18n="eco.c2.desc">Programas de formación ejecutiva en pensamiento estratégico con IA. Cohortes reducidas, proyectos reales, mentoría directa del fundador.</p>
+            <span class="eco-card-link" data-i18n="eco.c2.cta">Ver Programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </a>
+        <!-- Card 3: Advisory -->
+        <a href="pages/advisory.html" class="eco-card">
+          <div class="eco-card-bg" style="background: var(--insight-bg-3);"></div>
+          <div class="eco-card-overlay"></div>
+          <div class="eco-card-content">
+            <span class="eco-card-tag" data-i18n="eco.c3.tag">Línea 3</span>
+            <h3 data-i18n="eco.c3.title">Enterprise Advisory</h3>
+            <p data-i18n="eco.c3.desc">Diagnóstico IA-COMPASS, gobernanza de IA, roadmaps de implementación. Para organizaciones que necesitan resultados verificables, no PowerPoints.</p>
+            <span class="eco-card-link" data-i18n="eco.c3.cta">Iniciar Conversación <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         IA-COMPASS FEATURE — AMD Full-Width Product Highlight
+         ============================================================ -->
+    <section class="feature-section">
+      <div class="feature-inner fu">
+        <div class="feature-text">
+          <div class="section-eyebrow" data-i18n="compass.eyebrow">Framework Propietario</div>
+          <h2 class="section-headline" data-i18n="compass.headline">IA-COMPASS: Mide Tu Brecha<br>Antes de Cruzarla.</h2>
+          <p data-i18n="compass.desc1">Framework de diagnóstico institucional que evalúa 5 dimensiones de madurez en inteligencia artificial. Produce un reporte de 20+ páginas con hallazgos verificados, brechas críticas y roadmap accionable.</p>
+          <p data-i18n="compass.desc2">No es un checklist. Es un sistema de evaluación con scoring cuantitativo, benchmarks sectoriales y sesión ejecutiva de hallazgos.</p>
+          <div class="feature-dimensions">
+            <span class="feature-dim" data-i18n="compass.d1">Estrategia y Liderazgo</span>
+            <span class="feature-dim" data-i18n="compass.d2">Datos e Infraestructura</span>
+            <span class="feature-dim" data-i18n="compass.d3">Talento y Capacidades</span>
+            <span class="feature-dim" data-i18n="compass.d4">Operaciones</span>
+            <span class="feature-dim" data-i18n="compass.d5">Ética y Gobernanza</span>
+          </div>
+          <a href="pages/ia-compass.html" class="hero-cta-primary" data-i18n="compass.cta">Solicitar Diagnóstico →</a>
+        </div>
+        <div class="feature-visual">
+          <!-- Radar chart SVG placeholder -->
+          <svg class="feature-radar" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+            <!-- Pentagon grid -->
+            <g transform="translate(150,150)" opacity="0.15">
+              <polygon points="0,-120 114,-37 70,97 -70,97 -114,-37" fill="none" stroke="#6c47ff" stroke-width="1"/>
+              <polygon points="0,-90 85.5,-27.75 52.5,72.75 -52.5,72.75 -85.5,-27.75" fill="none" stroke="#6c47ff" stroke-width="1"/>
+              <polygon points="0,-60 57,-18.5 35,48.5 -35,48.5 -57,-18.5" fill="none" stroke="#6c47ff" stroke-width="1"/>
+              <polygon points="0,-30 28.5,-9.25 17.5,24.25 -17.5,24.25 -28.5,-9.25" fill="none" stroke="#6c47ff" stroke-width="1"/>
+            </g>
+            <!-- Data shape -->
+            <g transform="translate(150,150)">
+              <polygon points="0,-96 91,-22 56,82 -49,68 -80,-30" fill="rgba(108,71,255,0.15)" stroke="#6c47ff" stroke-width="2"/>
+              <!-- Data points -->
+              <circle cx="0" cy="-96" r="4" fill="#6c47ff"/>
+              <circle cx="91" cy="-22" r="4" fill="#6c47ff"/>
+              <circle cx="56" cy="82" r="4" fill="#6c47ff"/>
+              <circle cx="-49" cy="68" r="4" fill="#5de3ff"/>
+              <circle cx="-80" cy="-30" r="4" fill="#5de3ff"/>
+            </g>
+            <!-- Labels -->
+            <g font-family="Inter, sans-serif" font-size="10" fill="#8888a8" text-anchor="middle">
+              <text x="150" y="38">Estrategia</text>
+              <text x="268" y="130">Datos</text>
+              <text x="230" y="255">Talento</text>
+              <text x="70" y="255">Operaciones</text>
+              <text x="32" y="130">Ética</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TRUST — Logo Carousel
+         ============================================================ -->
+    <section class="trust-section">
+      <div class="trust-label" data-i18n="trust.label">Han confiado en nuestra perspectiva</div>
+      <div class="trust-overflow">
+        <div class="trust-track">
+          <!-- Placeholder logos (replace with real partner SVGs) -->
+          <svg class="trust-logo" viewBox="0 0 120 28"><text x="0" y="20" font-family="Inter" font-weight="700" font-size="16" fill="#fff">Partner 1</text></svg>
+          <svg class="trust-logo" viewBox="0 0 120 28"><text x="0" y="20" font-family="Inter" font-weight="700" font-size="16" fill="#fff">Partner 2</text></svg>
+          <svg class="trust-logo" viewBox="0 0 120 28"><text x="0" y="20" font-family="Inter" font-weight="700" font-size="16" fill="#fff">Partner 3</text></svg>
+          <svg class="trust-logo" viewBox="0 0 120 28"><text x="0" y="20" font-family="Inter" font-weight="700" font-size="16" fill="#fff">Partner 4</text></svg>
+          <svg class="trust-logo" viewBox="0 0 120 28"><text x="0" y="20" font-family="Inter" font-weight="700" font-size="16" fill="#fff">Partner 5</text></svg>
+          <svg class="trust-logo" viewBox="0 0 120 28"><text x="0" y="20" font-family="Inter" font-weight="700" font-size="16" fill="#fff">Partner 6</text></svg>
+          <!-- Duplicate for seamless loop -->
+          <svg class="trust-logo" viewBox="0 0 120 28"><text x="0" y="20" font-family="Inter" font-weight="700" font-size="16" fill="#fff">Partner 1</text></svg>
+          <svg class="trust-logo" viewBox="0 0 120 28"><text x="0" y="20" font-family="Inter" font-weight="700" font-size="16" fill="#fff">Partner 2</text></svg>
+          <svg class="trust-logo" viewBox="0 0 120 28"><text x="0" y="20" font-family="Inter" font-weight="700" font-size="16" fill="#fff">Partner 3</text></svg>
+          <svg class="trust-logo" viewBox="0 0 120 28"><text x="0" y="20" font-family="Inter" font-weight="700" font-size="16" fill="#fff">Partner 4</text></svg>
+          <svg class="trust-logo" viewBox="0 0 120 28"><text x="0" y="20" font-family="Inter" font-weight="700" font-size="16" fill="#fff">Partner 5</text></svg>
+          <svg class="trust-logo" viewBox="0 0 120 28"><text x="0" y="20" font-family="Inter" font-weight="700" font-size="16" fill="#fff">Partner 6</text></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         LATEST INSIGHTS — AMD News Section
+         ============================================================ -->
+    <section class="home-section section-alt">
+      <div class="section-inner fu">
+        <div class="section-eyebrow" data-i18n="insights.eyebrow">Últimos Insights</div>
+        <h2 class="section-headline" data-i18n="insights.headline">Análisis que Sobrevive<br>la Siguiente Tendencia.</h2>
+      </div>
+      <div class="insights-grid fu" style="max-width: var(--mw); margin: 0 auto;">
+        <a href="pages/insights.html" class="insight-card">
+          <div class="insight-card-img" aria-hidden="true">&#9670;</div>
+          <div class="insight-card-body">
+            <span class="insight-cat" data-i18n="insights.a1.cat">IA Aplicada</span>
+            <h3 data-i18n="insights.a1.title">Por qué el 73% de los pilotos de IA en Colombia no llegan a producción</h3>
+            <p data-i18n="insights.a1.excerpt">La brecha no es tecnológica: es de gobernanza. Análisis de 40 proyectos de IA en empresas colombianas.</p>
+            <div class="insight-meta"><span data-i18n="insights.a1.date">Abril 2026</span><span>·</span><span data-i18n="insights.a1.time">12 min</span></div>
+          </div>
+        </a>
+        <a href="pages/insights.html" class="insight-card">
+          <div class="insight-card-img" aria-hidden="true">&#9670;</div>
+          <div class="insight-card-body">
+            <span class="insight-cat" data-i18n="insights.a2.cat">Decisiones Estratégicas</span>
+            <h3 data-i18n="insights.a2.title">El error de comprar ChatGPT Enterprise sin estrategia de datos</h3>
+            <p data-i18n="insights.a2.excerpt">Licencias sin arquitectura de datos producen gasto, no transformación.</p>
+            <div class="insight-meta"><span data-i18n="insights.a2.date">Abril 2026</span><span>·</span><span data-i18n="insights.a2.time">10 min</span></div>
+          </div>
+        </a>
+        <a href="pages/insights.html" class="insight-card">
+          <div class="insight-card-img" aria-hidden="true">&#9670;</div>
+          <div class="insight-card-body">
+            <span class="insight-cat" data-i18n="insights.a3.cat">Contexto LATAM</span>
+            <h3 data-i18n="insights.a3.title">Regulación de IA en Colombia 2026: qué existe, qué falta y qué cambia</h3>
+            <p data-i18n="insights.a3.excerpt">Mapa completo del marco regulatorio colombiano aplicable a IA, con comparativa regional.</p>
+            <div class="insight-meta"><span data-i18n="insights.a3.date">Mayo 2026</span><span>·</span><span data-i18n="insights.a3.time">15 min</span></div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA FINAL — AMD Dramatic Full-Width
+         ============================================================ -->
+    <section class="cta-section">
+      <div class="cta-glow" aria-hidden="true"></div>
+      <div class="cta-inner fu">
+        <h2 data-i18n="cta.headline">¿Estás tomando decisiones estratégicas con información de segunda categoría?</h2>
+        <p data-i18n="cta.desc">América Latina necesita inteligencia estratégica producida desde la región, con sus propios estándares de rigor. Eso es exactamente lo que construimos.</p>
+        <div class="cta-buttons">
+          <a href="pages/contact.html" class="hero-cta-primary" data-i18n="cta.btn1">Agendar Conversación →</a>
+          <a href="pages/sid.html" class="hero-cta-secondary" data-i18n="cta.btn2">Explorar el Digest</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="js/partials.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/hero-slider.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+/* ============================================================
+   VARIABLES.CSS — Design Tokens THS Portal
+   AMD-Adapted · Dark Premium · v2.0
+   
+   CHANGE LOG:
+   v2.0 — AMD adaptation: pure blacks, minimal radii, 
+          no visible borders, stronger contrast, 
+          AMD navbar behavior tokens, hero slider tokens.
+   v1.0 — Clerk-inspired (archived)
+   ============================================================ */
+
+/* ---- DARK MODE (primary — AMD-style) ---- */
+:root,
+[data-theme="dark"] {
+  /* Fondos — AMD uses pure blacks with minimal elevation steps */
+  --bg-primary:      #000000;
+  --bg-secondary:    #0a0a0a;
+  --bg-tertiary:     #111111;
+  --bg-card:         #0a0a0a;
+  --bg-card-hover:   #141414;
+
+  /* Sections — AMD alternates dark/darker aggressively */
+  --bg-section-a:    #000000;
+  --bg-section-b:    #0a0a0a;
+  --bg-section-c:    #050505;
+
+  /* Texto — AMD uses pure white, not off-white */
+  --text-primary:    #ffffff;
+  --text-secondary:  #a0a0b0;
+  --text-muted:      #8888a8;     /* WCAG AA verified: ≥4.5:1 on #000 */
+  --text-inverse:    #000000;
+
+  /* Acento THS (NOT AMD red — THS identity) */
+  --accent:          #6c47ff;
+  --accent-hover:    #8060ff;
+  --accent-active:   #5a3de8;
+  --accent-subtle:   rgba(108, 71, 255, 0.10);
+  --accent-glow:     rgba(108, 71, 255, 0.30);
+
+  /* Secondary accent */
+  --sky:             #5de3ff;
+  --sky-subtle:      rgba(93, 227, 255, 0.10);
+  --green:           #4ade68;
+
+  /* Bordes — AMD: almost invisible, contrast is the separator */
+  --border:          rgba(255, 255, 255, 0.06);
+  --border-strong:   rgba(255, 255, 255, 0.12);
+  --divider:         rgba(255, 255, 255, 0.04);
+
+  /* Navbar — AMD pattern: transparent → solid on scroll */
+  --nav-bg-initial:  transparent;
+  --nav-bg-scrolled: rgba(0, 0, 0, 0.97);
+  --nav-border:      rgba(255, 255, 255, 0.06);
+  --nav-height:      64px;
+  --nav-height-mobile: 56px;
+  --nav-scroll-threshold: 80;
+
+  /* Dropdown */
+  --dd-bg:           #0f0f0f;
+  --dd-hover:        rgba(255, 255, 255, 0.04);
+  --dd-shadow:       0 12px 40px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.4);
+  --dd-icon-bg:      rgba(108, 71, 255, 0.08);
+  --dd-icon-color:   #6c47ff;
+
+  /* Buttons — AMD-style: larger, bolder */
+  --btn-primary-bg:  #6c47ff;
+  --btn-primary-fg:  #ffffff;
+  --btn-primary-hover: #8060ff;
+  --btn-secondary-bg: transparent;
+  --btn-secondary-fg: #ffffff;
+  --btn-secondary-border: rgba(255, 255, 255, 0.25);
+  --btn-secondary-hover-border: rgba(255, 255, 255, 0.5);
+  --btn-ghost-fg:    #a0a0b0;
+  --btn-ghost-hover: rgba(255, 255, 255, 0.06);
+
+  /* Shadows — AMD: minimal, depth from contrast */
+  --shadow-sm:       none;
+  --shadow-md:       0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg:       0 16px 48px rgba(0, 0, 0, 0.5);
+  --shadow-accent:   0 4px 24px rgba(108, 71, 255, 0.35);
+
+  /* Gradients */
+  --gradient-accent:  linear-gradient(135deg, #6c47ff 0%, #4ea8de 100%);
+  --gradient-hero-overlay: linear-gradient(135deg, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.30) 100%);
+  --gradient-hero-overlay-left: linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 100%);
+  --gradient-section-fade: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  --gradient-card-hover: linear-gradient(135deg, rgba(108,71,255,0.08) 0%, rgba(93,227,255,0.04) 100%);
+
+  /* Hero slider */
+  --hero-height:     100vh;
+  --hero-min-height: 600px;
+  --hero-overlay:    var(--gradient-hero-overlay-left);
+  --hero-transition: 800ms;
+  --hero-autoplay:   8000;
+
+  /* Dark sections (manifesto, CTA, footer) */
+  --dark-bg:         #050505;
+  --dark-text:       #f0f0f5;
+  --dark-muted:      #9090a4;     /* WCAG AA: ≥4.5:1 on #050505 */
+  --dark-border:     rgba(255, 255, 255, 0.04);
+
+  /* Badge */
+  --badge-bg:        rgba(108, 71, 255, 0.10);
+  --badge-border:    rgba(108, 71, 255, 0.25);
+  --badge-text:      #5de3ff;
+
+  /* Tags */
+  --tag-bg:          rgba(255, 255, 255, 0.04);
+  --tag-border:      rgba(255, 255, 255, 0.08);
+  --tag-text:        #a0a0b0;
+
+  /* Cards — AMD: no borders, no shadows, hover = scale + gradient */
+  --card-radius:     4px;
+  --card-border:     none;
+  --card-hover-scale: 1.02;
+
+  /* Insight cards */
+  --insight-bg-1:    linear-gradient(135deg, rgba(108,71,255,0.15), rgba(93,227,255,0.08));
+  --insight-bg-2:    linear-gradient(135deg, rgba(93,227,255,0.12), rgba(108,71,255,0.08));
+  --insight-bg-3:    linear-gradient(135deg, rgba(78,222,104,0.10), rgba(108,71,255,0.06));
+
+  /* Tab preview */
+  --tp-bg:           #050505;
+  --tp-card-bg:      #0f0f0f;
+  --tp-card-border:  rgba(255, 255, 255, 0.06);
+
+  /* Accordion */
+  --accordion-bg:    #0a0a0a;
+  --accordion-hover: #111111;
+
+  color-scheme: dark;
+}
+
+/* ---- LIGHT MODE (secondary — for alternate sections) ---- */
+[data-theme="light"],
+.section-light {
+  --bg-primary:      #f8f8fa;
+  --bg-secondary:    #ffffff;
+  --bg-card:         #ffffff;
+  --bg-card-hover:   #f5f5f7;
+  --text-primary:    #0a0a0a;
+  --text-secondary:  #555566;
+  --text-muted:      #777788;
+  --border:          rgba(0, 0, 0, 0.06);
+  --border-strong:   rgba(0, 0, 0, 0.12);
+  --btn-primary-bg:  #6c47ff;
+  --btn-primary-fg:  #ffffff;
+  --btn-ghost-fg:    #555566;
+  --btn-ghost-hover: rgba(0, 0, 0, 0.04);
+  --card-border:     none;
+  --shadow-md:       0 4px 24px rgba(0, 0, 0, 0.06);
+  color-scheme: light;
+}
+
+/* ---- Fallback for no-JS (prefers dark) ---- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg-primary:    #000000;
+    --bg-secondary:  #0a0a0a;
+    --text-primary:  #ffffff;
+    --text-secondary:#a0a0b0;
+    --border:        rgba(255,255,255,0.06);
+    --nav-bg-initial:transparent;
+    color-scheme: dark;
+  }
+}
+
+/* ---- TYPOGRAPHY SCALE — AMD-style (bold, tight tracking) ---- */
+:root {
+  --f: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mw: 1400px;      /* AMD uses ~1440px max-width */
+
+  /* AMD-style scale: larger heroes, tighter tracking */
+  --text-xs:    0.75rem;     /* 12px */
+  --text-sm:    0.875rem;    /* 14px */
+  --text-base:  1rem;        /* 16px */
+  --text-lg:    1.125rem;    /* 18px */
+  --text-xl:    1.25rem;     /* 20px */
+  --text-2xl:   1.5rem;      /* 24px */
+  --text-3xl:   2rem;        /* 32px */
+  --text-4xl:   2.75rem;     /* 44px */
+  --text-5xl:   3.5rem;      /* 56px */
+  --text-hero:  clamp(2.5rem, 5vw, 4.5rem);  /* 40–72px */
+
+  /* Spacing (8px system — AMD uses generous spacing) */
+  --space-1:   0.25rem;    /* 4px */
+  --space-2:   0.5rem;     /* 8px */
+  --space-3:   0.75rem;    /* 12px */
+  --space-4:   1rem;       /* 16px */
+  --space-6:   1.5rem;     /* 24px */
+  --space-8:   2rem;       /* 32px */
+  --space-10:  2.5rem;     /* 40px */
+  --space-12:  3rem;       /* 48px */
+  --space-16:  4rem;       /* 64px */
+  --space-20:  5rem;       /* 80px */
+  --space-24:  6rem;       /* 96px */
+  --space-32:  8rem;       /* 128px */
+
+  /* Radii — AMD: very conservative */
+  --radius-sm:   2px;
+  --radius-md:   4px;
+  --radius-lg:   8px;
+  --radius-xl:   12px;
+  --radius-full: 9999px;
+
+  /* Transitions — AMD: smooth, professional */
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-base: 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 500ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-hero: 800ms cubic-bezier(0.4, 0, 0.2, 1);
+}

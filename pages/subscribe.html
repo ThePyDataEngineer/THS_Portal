@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suscribirse | The Human Software</title>
+  <meta name="description" content="Recibe inteligencia estratégica quincenal con fuentes verificadas, frameworks propietarios y contexto LATAM.">
+  <meta name="theme-color" content="#000000">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <style>
+    .subscribe-page{margin-top:var(--nav-height);min-height:calc(100vh - var(--nav-height));display:flex;align-items:center;justify-content:center;padding:var(--space-16) 24px;position:relative;overflow:hidden}
+    .subscribe-glow{position:absolute;top:20%;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(108,71,255,.10) 0%,transparent 70%);pointer-events:none}
+    .subscribe-card{position:relative;z-index:1;max-width:560px;width:100%;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:clamp(32px,5vw,48px)}
+    .subscribe-eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+    .subscribe-card h1{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;letter-spacing:-.03em;line-height:1.15;color:var(--text-primary);margin:0 0 12px}
+    .subscribe-card .subtitle{font-size:15px;color:var(--text-secondary);line-height:1.7;margin-bottom:32px}
+    .subscribe-form{display:flex;flex-direction:column;gap:20px}
+    .form-field{display:flex;flex-direction:column;gap:6px}
+    .form-field label{font-size:13px;font-weight:600;color:var(--text-primary)}
+    .form-field input[type="email"],.form-field input[type="text"]{padding:14px 16px;font-family:var(--f);font-size:15px;color:var(--text-primary);background:var(--bg-primary);border:1px solid var(--border-strong);border-radius:var(--radius-sm);transition:border-color var(--transition-fast)}
+    .form-field input:focus{border-color:var(--accent);outline:none}
+    .form-field input::placeholder{color:var(--text-muted)}
+    .preference-group label.group-label{font-size:13px;font-weight:600;color:var(--text-primary);display:block;margin-bottom:10px}
+    .preference-options{display:flex;flex-direction:column;gap:8px}
+    .preference-option{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--bg-primary);border:1px solid var(--border);border-radius:var(--radius-md);cursor:pointer;transition:border-color var(--transition-fast),background var(--transition-fast)}
+    .preference-option:hover{border-color:var(--border-strong)}
+    .preference-option.selected{border-color:var(--accent);background:rgba(108,71,255,.06)}
+    .preference-option input[type="radio"]{margin-top:2px;accent-color:var(--accent);flex-shrink:0}
+    .preference-option-text strong{display:block;font-size:14px;font-weight:600;color:var(--text-primary);margin-bottom:2px}
+    .preference-option-text span{font-size:12px;color:var(--text-muted);line-height:1.4}
+    .subscribe-submit{padding:16px 32px;font-family:var(--f);font-size:15px;font-weight:700;color:#fff;background:var(--accent);border:none;border-radius:var(--radius-sm);cursor:pointer;transition:background var(--transition-fast),box-shadow var(--transition-fast)}
+    .subscribe-submit:hover{background:var(--accent-hover);box-shadow:var(--shadow-accent)}
+    .subscribe-consent{font-size:12px;color:var(--text-muted);line-height:1.6}
+    .subscribe-consent a{color:var(--accent);text-decoration:underline}
+    .subscribe-details{margin-top:32px;padding-top:24px;border-top:1px solid var(--border)}
+    .subscribe-details h3{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:14px}
+    .subscribe-detail-item{display:flex;align-items:flex-start;gap:10px;padding:8px 0}
+    .subscribe-detail-item svg{width:16px;height:16px;color:var(--accent);flex-shrink:0;margin-top:2px}
+    .subscribe-detail-item span{font-size:14px;color:var(--text-secondary);line-height:1.5}
+    @media(max-width:480px){.subscribe-page{margin-top:var(--nav-height-mobile);padding:var(--space-8) 16px}.subscribe-card{padding:24px}}
+  </style>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+  <main id="main-content">
+    <div class="subscribe-page">
+      <div class="subscribe-glow" aria-hidden="true"></div>
+      <div class="subscribe-card">
+        <div class="subscribe-eyebrow" data-i18n="subscribe.eyebrow">Suscripcion</div>
+        <h1 data-i18n="subscribe.title">Recibe inteligencia que precede a la decision.</h1>
+        <p class="subtitle" data-i18n="subscribe.subtitle">Analisis propietario con fuentes verificadas, frameworks aplicables y contexto LATAM. Sin clickbait, sin relleno, sin resumenes de segunda mano.</p>
+
+        <form class="subscribe-form" id="subscribeForm" novalidate>
+          <div class="form-field">
+            <label for="sub-name" data-i18n="subscribe.form.name">Nombre completo</label>
+            <input type="text" id="sub-name" name="name" placeholder="Ej: Maria Garcia Lopez" required>
+          </div>
+          <div class="form-field">
+            <label for="sub-email" data-i18n="subscribe.form.email">Email profesional</label>
+            <input type="email" id="sub-email" name="email" placeholder="tu@empresa.com" required>
+          </div>
+
+          <div class="preference-group">
+            <label class="group-label" data-i18n="subscribe.form.preference">Que quieres recibir?</label>
+            <div class="preference-options">
+              <label class="preference-option selected">
+                <input type="radio" name="preference" value="both" checked>
+                <div class="preference-option-text">
+                  <strong data-i18n="subscribe.pref.both.title">THS + THSN (Recomendado)</strong>
+                  <span data-i18n="subscribe.pref.both.desc">Insights del blog + Strategic Intelligence Digest quincenal</span>
+                </div>
+              </label>
+              <label class="preference-option">
+                <input type="radio" name="preference" value="thsn">
+                <div class="preference-option-text">
+                  <strong data-i18n="subscribe.pref.thsn.title">Solo THSN Digest</strong>
+                  <span data-i18n="subscribe.pref.thsn.desc">Publicacion quincenal de 3,000+ palabras con frameworks propietarios</span>
+                </div>
+              </label>
+              <label class="preference-option">
+                <input type="radio" name="preference" value="ths">
+                <div class="preference-option-text">
+                  <strong data-i18n="subscribe.pref.ths.title">Solo THS Updates</strong>
+                  <span data-i18n="subscribe.pref.ths.desc">Articulos del blog, nuevos frameworks y novedades del ecosistema</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="subscribe-submit" data-i18n="subscribe.form.submit">Suscribirse</button>
+          <p class="subscribe-consent" data-i18n="subscribe.consent">Al suscribirte aceptas recibir comunicaciones de The Human Software. Puedes cambiar tus preferencias o darte de baja en cualquier momento. Respetamos la <a href="privacidad.html">Ley 1581/2012</a>.</p>
+        </form>
+
+        <div class="subscribe-details">
+          <h3 data-i18n="subscribe.details.title">Que recibiras</h3>
+          <div class="subscribe-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            <span data-i18n="subscribe.detail1">Analisis quincenal de 3,000+ palabras con 15-25 fuentes verificadas</span>
+          </div>
+          <div class="subscribe-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            <span data-i18n="subscribe.detail2">1-2 frameworks propietarios por edicion (MAC, EIA, FVR, MDA, IRE)</span>
+          </div>
+          <div class="subscribe-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            <span data-i18n="subscribe.detail3">Contexto LATAM obligatorio en cada analisis</span>
+          </div>
+          <div class="subscribe-detail-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            <span data-i18n="subscribe.detail4">Cero clickbait, cero relleno, cero resumenes de newsletters anglosajonas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script src="../js/partials.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function(){
+      var options = document.querySelectorAll('.preference-option');
+      options.forEach(function(opt){
+        opt.addEventListener('click', function(){
+          options.forEach(function(o){ o.classList.remove('selected'); });
+          opt.classList.add('selected');
+          opt.querySelector('input[type="radio"]').checked = true;
+        });
+      });
+    });
+  </script>
+</body>
+</html>

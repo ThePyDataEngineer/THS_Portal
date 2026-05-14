@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://thehumansoftware.com/sitemap.xml
